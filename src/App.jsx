@@ -71,7 +71,7 @@ export default function App() {
       },
       {
         title: "Associate Professional Business Analyst",
-        type: "Full-time",
+        type: "Part-time",
         dates: "September 2025 – June 2026",
         description:
           "Supported Funds Management operations by analyzing processes, identifying inefficiencies, and helping propose re-engineering opportunities. Worked with SQL, internal databases, dashboards, and VBA/Python driven automation to improve reporting, reduce manual effort, and create clearer visibility for business decision-making.",
