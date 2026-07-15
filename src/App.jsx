@@ -55,33 +55,57 @@ export default function App() {
   ];
 
   const experience = [
-    {
-      company: "Cotality",
-      role: "Associate Professional Business Analyst",
-      location: "Dallas, Texas",
-      dates: "June 2025 – Present",
-      logo: cotalityLogo,
-      bullets: [
-        "Analyze inefficiencies within Funds Management operations and help identify process improvement opportunities.",
-        "Designed and implemented an interactive dashboard to make reporting easier to understand and more useful for decision making.",
-        "Use SQL and internal databases to work with large datasets for business reporting.",
-        "Built VBA-driven automation to streamline recurring reports and reduce manual effort.",
-      ],
-    },
-    {
-      company: "Texas A&M Technology Services",
-      role: "Student Technician",
-      location: "College Station, Texas",
-      dates: "January 2024 – September 2024",
-      logo: tamuLogo,
-      bullets: [
-        "Provided IT support for the Biomedical and Industrial Systems Department.",
-        "Reimaged devices for students and faculty to keep software updated and reliable.",
-        "Helped train new staff in troubleshooting and day-to-day technical tasks.",
-        "Resolved technical issues ranging from hardware problems to network connectivity concerns.",
-      ],
-    },
-  ];
+  {
+    company: "Cotality",
+    logo: cotalityLogo,
+    location: "Irving, Texas",
+    roles: [
+      {
+        title: "Product Analyst Intern",
+        type: "Internship",
+        dates: "June 2026 – Present",
+        description:
+          "Currently supporting product-focused work at Cotality, with a focus on understanding business needs, exploring data-driven solutions, and contributing to product and discovery center initiatives.",
+        skills:
+          "Product Analysis, Business Analysis, Data Visualization, Research, Product Thinking",
+      },
+      {
+        title: "Associate Professional Business Analyst",
+        type: "Full-time",
+        dates: "September 2025 – June 2026",
+        description:
+          "Supported Funds Management operations by analyzing processes, identifying inefficiencies, and helping propose re-engineering opportunities. Worked with SQL, internal databases, dashboards, and VBA-driven automation to improve reporting, reduce manual effort, and create clearer visibility for business decision-making.",
+        skills:
+          "Advanced SQL, Tableau, Power BI, Microsoft Excel, VBA, Process Automation, Business Reporting, Data Transformation, Internal Database Management",
+      },
+      {
+        title: "Business Process Improvement Intern",
+        type: "Internship",
+        dates: "June 2025 – August 2025",
+        description:
+          "Supported Funds Management by analyzing workflows, identifying process inefficiencies, and assisting with operational improvement initiatives. Helped build reporting dashboards, queried internal databases using SQL, and organized data for business reporting and analysis.",
+        skills:
+          "SQL, Tableau, Power BI, Microsoft Excel, Dashboard Development, Data Visualization, Data Analysis, Business Reporting, Process Documentation, Workflow Analysis",
+      },
+    ],
+  },
+  {
+    company: "Texas A&M Technology Services",
+    logo: tamuLogo,
+    location: "College Station, Texas",
+    roles: [
+      {
+        title: "Student Technician",
+        type: "Part-time",
+        dates: "January 2024 – August 2024",
+        description:
+          "Provided technical support for the Biomedical and Industrial Systems Department at Texas A&M University. Assisted with device reimaging, software setup, hardware troubleshooting, network connectivity issues, and training new staff on basic troubleshooting processes.",
+        skills:
+          "IT Support, Hardware Troubleshooting, Software Installation, Device Reimaging, Network Connectivity, Customer Support, Technical Training",
+      },
+    ],
+  },
+];
 
   const involvement = [
     {
@@ -306,81 +330,112 @@ export default function App() {
           </div>
         </section>
 
-        <section id="experience" className="section">
-          <p className="section-label">Experience</p>
-          <h2 className="section-title">
-            Places where I have learned, contributed, and grown.
-          </h2>
+<section id="experience" className="section">
+  <p className="section-label">Experience</p>
+  <h2 className="section-title">
+    Places where I have learned, contributed, and grown.
+  </h2>
 
+  <div
+    style={{
+      display: "grid",
+      gap: "24px",
+      marginTop: "28px",
+    }}
+  >
+    {experience.map((company) => (
+      <div className="section-box" key={company.company}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "flex-start",
+            gap: "22px",
+            flexWrap: "wrap",
+          }}
+        >
           <div
             style={{
-              display: "grid",
-              gap: "24px",
-              marginTop: "28px",
+              width: "200px",
+              height: "135px",
+              borderRadius: "18px",
+              background: "#f8faf7",
+              border: "1px solid #dde2da",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              overflow: "hidden",
+              flexShrink: 0,
             }}
           >
-            {experience.map((job) => (
-              <div className="section-box" key={job.company + job.role}>
+            <img
+              src={company.logo}
+              alt={company.company}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "contain",
+              }}
+            />
+          </div>
+
+          <div style={{ flex: 1, minWidth: "280px" }}>
+            <h3 style={{ margin: "0 0 6px 0" }}>{company.company}</h3>
+            <p style={{ margin: "0 0 20px 0", color: "#666" }}>
+              {company.location}
+            </p>
+
+            <div style={{ display: "grid", gap: "22px" }}>
+              {company.roles.map((role) => (
                 <div
+                  key={role.title}
                   style={{
-                    display: "flex",
-                    alignItems: "flex-start",
-                    gap: "18px",
-                    flexWrap: "wrap",
+                    borderLeft: "2px solid #dde2da",
+                    paddingLeft: "18px",
                   }}
                 >
-                  <div
+                  <h4 style={{ margin: "0 0 4px 0", fontSize: "18px" }}>
+                    {role.title}
+                  </h4>
+
+                  <p
                     style={{
-                      width: "200px",
-                      height: "135px",
-                      borderRadius: "18px",
-                      background: "#f8faf7",
-                      border: "1px solid #dde2da",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      overflow: "hidden",
-                      flexShrink: 0,
+                      margin: "0 0 10px 0",
+                      color: "#666",
+                      fontSize: "14px",
                     }}
                   >
-                    <img
-                      src={job.logo}
-                      alt={job.company}
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "contain",
-                      }}
-                    />
-                  </div>
+                    {role.type} • {role.dates}
+                  </p>
 
-                  <div style={{ flex: 1, minWidth: "260px" }}>
-                    <h3 style={{ margin: "0 0 6px 0" }}>{job.role}</h3>
-                    <p style={{ margin: "0", fontWeight: 600 }}>
-                      {job.company}
-                    </p>
-                    <p style={{ margin: "6px 0 14px 0", color: "#666" }}>
-                      {job.location} • {job.dates}
-                    </p>
+                  <p
+                    style={{
+                      margin: "0 0 12px 0",
+                      lineHeight: 1.8,
+                      color: "#4f4f4f",
+                    }}
+                  >
+                    {role.description}
+                  </p>
 
-                    <ul
-                      style={{
-                        margin: 0,
-                        paddingLeft: "18px",
-                        lineHeight: 1.8,
-                        color: "#4f4f4f",
-                      }}
-                    >
-                      {job.bullets.map((bullet) => (
-                        <li key={bullet}>{bullet}</li>
-                      ))}
-                    </ul>
-                  </div>
+                  <p
+                    style={{
+                      margin: 0,
+                      lineHeight: 1.7,
+                      color: "#555",
+                      fontSize: "14px",
+                    }}
+                  >
+                    <strong>Skills:</strong> {role.skills}
+                  </p>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </section>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
 
         <section id="projects" className="section">
           <p className="section-label">Projects</p>
