@@ -67,16 +67,16 @@ export default function App() {
         description:
           "Currently supporting product-focused work at Cotality, with a focus on understanding business needs, exploring data-driven solutions, and contributing to product and discovery center initiatives.",
         skills:
-          "Product Analysis, Business Analysis, Data Visualization, Research, Product Thinking",
+          "Product Strategy, Data Analysis, Data Visualization, Stakeholder Managerment, Cross-Functional Collaboration, User Experience (UX)",
       },
       {
         title: "Associate Professional Business Analyst",
         type: "Full-time",
         dates: "September 2025 – June 2026",
         description:
-          "Supported Funds Management operations by analyzing processes, identifying inefficiencies, and helping propose re-engineering opportunities. Worked with SQL, internal databases, dashboards, and VBA-driven automation to improve reporting, reduce manual effort, and create clearer visibility for business decision-making.",
+          "Supported Funds Management operations by analyzing processes, identifying inefficiencies, and helping propose re-engineering opportunities. Worked with SQL, internal databases, dashboards, and VBA/Python driven automation to improve reporting, reduce manual effort, and create clearer visibility for business decision-making.",
         skills:
-          "Advanced SQL, Tableau, Power BI, Microsoft Excel, VBA, Process Automation, Business Reporting, Data Transformation, Internal Database Management",
+          "Advanced SQL, Tableau, Power BI, Python, Microsoft Excel, VBA, Process Automation, Business Reporting, Data Transformation, Internal Database Management",
       },
       {
         title: "Business Process Improvement Intern",
