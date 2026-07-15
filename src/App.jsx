@@ -23,9 +23,9 @@ export default function App() {
       title: "Funds Management Dashboard",
       subtitle: "Interactive reporting tool for better visibility",
       problem:
-        "The team needed a clearer way to see funds on account, client billables, and escrow activity without having to piece together information from multiple places.",
+        "The team needed a clearer way to view funds on account, client billables, and escrow activity without having to piece together information from multiple places.",
       solution:
-        "I built an interactive dashboard that brought those data points into one place and made the reporting easier to read, filter, and use for day to day decision making.",
+        "I built an interactive dashboard that brought those data points into one place and made the reporting easier to read, filter, and use for day-to-day decision making.",
       tools: "Excel, VBA, Data Visualization",
       impact:
         "It made reporting more organized and helped stakeholders get a quicker, clearer view of important financial activity.",
@@ -47,7 +47,7 @@ export default function App() {
       problem:
         "Some recurring reporting processes were very manual, which made them time consuming and harder to keep consistent.",
       solution:
-        "I developed VBA based automation and reporting logic to simplify repetitive tasks and make the process smoother for the team.",
+        "I developed VBA-based automation and reporting logic to simplify repetitive tasks and make the process smoother for the team.",
       tools: "Excel, VBA, Process Improvement",
       impact:
         "It reduced manual effort and made recurring workflows more efficient and easier to manage.",
@@ -62,10 +62,10 @@ export default function App() {
       dates: "June 2025 – Present",
       logo: cotalityLogo,
       bullets: [
-        "I analyze inefficiencies within Funds Management operations and help identify process improvement opportunities.",
-        "I designed and implemented an interactive dashboard to make reporting easier to understand and more useful for decision making.",
-        "I use SQL and internal databases to work with large datasets for business reporting.",
-        "I built VBA driven automation to streamline recurring reports and reduce manual effort.",
+        "Analyze inefficiencies within Funds Management operations and help identify process improvement opportunities.",
+        "Designed and implemented an interactive dashboard to make reporting easier to understand and more useful for decision making.",
+        "Use SQL and internal databases to work with large datasets for business reporting.",
+        "Built VBA-driven automation to streamline recurring reports and reduce manual effort.",
       ],
     },
     {
@@ -75,10 +75,10 @@ export default function App() {
       dates: "January 2024 – September 2024",
       logo: tamuLogo,
       bullets: [
-        "I provided IT support for the Biomedical and Industrial Systems Department.",
-        "I reimaged devices for students and faculty to keep software updated and reliable.",
-        "I helped train new staff in troubleshooting and day to day technical tasks.",
-        "I resolved technical issues ranging from hardware problems to network connectivity concerns.",
+        "Provided IT support for the Biomedical and Industrial Systems Department.",
+        "Reimaged devices for students and faculty to keep software updated and reliable.",
+        "Helped train new staff in troubleshooting and day-to-day technical tasks.",
+        "Resolved technical issues ranging from hardware problems to network connectivity concerns.",
       ],
     },
   ];
@@ -87,37 +87,48 @@ export default function App() {
     {
       title: "Multicultural Association of Business Students",
       role: "President",
+      dates: "August 2023 – May 2025",
       logo: mabsLogo,
       details:
-        "I led professional workshops, mentorship programs, and events that helped build community and support students in Mays Business School.",
+        "Led professional workshops, mentorship programs, and events that helped build community and support students in Mays Business School.",
     },
     {
       title: "Aggie Women in Business",
       role: "Member Development Committee Member",
+      dates: "August 2023 – Present",
       logo: awibLogo,
       details:
-        "I helped organize volunteer and professional development events focused on mentorship, growth, and community.",
+        "Helped organize volunteer and professional development events focused on mentorship, growth, and community.",
     },
     {
       title: "Sikh Student Association",
       role: "President",
+      dates: "August 2023 – May 2025",
       logo: ssaLogo,
       details:
-        "I planned cultural events and worked with outside organizations to promote awareness, connection, and community engagement.",
+        "Planned cultural events and worked with outside organizations to promote awareness, connection, and community engagement.",
     },
     {
       title: "Seva Daan",
       role: "Committee Member",
+      dates: "June 2021 – August 2022",
       logo: sevaLogo,
       details:
-        "I helped support nonprofit initiatives focused on meal donation and community outreach for the homeless population in DFW.",
+        "Helped support nonprofit initiatives focused on meal donation and community outreach for the homeless population in DFW.",
     },
   ];
 
   const skillGroups = [
     {
       title: "Data & Analysis",
-      items: ["SQL", "Excel", "VBA", "Data Analysis", "Data Visualization", "Data Cleaning"],
+      items: [
+        "SQL",
+        "Excel",
+        "VBA",
+        "Data Analysis",
+        "Data Visualization",
+        "Data Cleaning",
+      ],
     },
     {
       title: "Business & Strategy",
@@ -126,6 +137,8 @@ export default function App() {
         "Process Improvement",
         "Stakeholder Communication",
         "Problem Solving",
+        "Tableau",
+        "Power BI",
       ],
     },
     {
@@ -138,19 +151,19 @@ export default function App() {
     {
       title: "Cooking",
       text:
-        "I love trying new recipes and putting my own spin on dishes. It is one of my favorite ways to slow down and relax. Above is a recent creation of mine - Ras Malai Cupcakes! They are inspired by the traditional Indian dessert, Ras Malai, and are one of my favorite treats to make and eat.",
+        "I love trying new recipes and putting my own spin on dishes. It is one of my favorite ways to slow down and relax. Above is a recent creation of mine — Ras Malai Cupcakes! They are inspired by the traditional Indian dessert, Ras Malai, and are one of my favorite treats to make and eat.",
       image: cookingImg,
     },
     {
       title: "Reading",
       text:
-        "I am a big reader, and I love books that feel thoughtful, inspiring, or just easy to get lost in. My favorite genres are fantasy, historical fiction, and personal growth, but I am always open to new recommendations. Fun fact - I read 52 books in the year 2025, you'll always catch me with a book in hand!",
+        "I am a big reader, and I love books that feel thoughtful, inspiring, or just easy to get lost in. My favorite genres are fantasy, historical fiction, and personal growth, but I am always open to new recommendations. Fun fact — I read 52 books in 2025, so you will almost always catch me with a book in hand.",
       image: readingImg,
     },
     {
       title: "Photography",
       text:
-        "I enjoy capturing moments through photos or videos, especially when I am traveling or experiencing somewhere new. It is a fun way for me to be creative and also have a visual way to remember experiences. The photo above is one I took in Isla Mujeres, Mexico - it was such a beautiful place and I loved being able to capture the colors and vibes of the island through my camera.",
+        "I enjoy capturing moments through photos or videos, especially when I am traveling or experiencing somewhere new. It is a fun way for me to be creative and also have a visual way to remember experiences. The photo above is one I took in Isla Mujeres, Mexico — it was such a beautiful place, and I loved being able to capture the colors and energy of the island.",
       image: photographyImg,
     },
   ];
@@ -159,13 +172,13 @@ export default function App() {
     {
       title: "New York",
       text:
-        "New York has always been on my bucket list, so finally getting to visit felt really special. We did all the touristy things, explored the city, and honestly ate way too much food. It was one of those trips that just felt fun the entire time and is definitely something I will always remember.",
+        "New York has always been on my bucket list, so finally getting to visit felt really special. We did all the touristy things, explored the city, and honestly ate way too much food. It was one of those trips that felt fun the entire time and is definitely something I will always remember.",
       file: nyVideo,
     },
     {
       title: "Punjab, India",
       text:
-        "As the daughter of immigrant parents, staying connected to my roots has always been really important to me. Growing up, we visited Punjab almost every summer, and over time it became a place that feels like home, just like it does for my parents. It is a part of me that I will always carry with me. The video above is from one of my trips there - it is a montage of clips from different visits, and it captures some of my favorite moments and memories from the place that means so much to me.",
+        "As the daughter of immigrant parents, staying connected to my roots has always been important to me. Growing up, we visited Punjab almost every summer, and over time it became a place that feels like home, just like it does for my parents. It is a part of me that I will always carry with me. The video above is from one of my trips there — a montage of clips from different visits that captures some of my favorite moments and memories.",
       file: punjabVideo,
     },
   ];
@@ -197,7 +210,7 @@ export default function App() {
         <section className="hero">
           <div className="hero-text">
             <p className="pill">
-              Business Analyst @ Cotality | MIS @ Texas A&M Mays School of Business
+              Product Analyst @ Cotality | Texas A&amp;M MIS Graduate
             </p>
 
             <h1>
@@ -207,10 +220,11 @@ export default function App() {
             </h1>
 
             <p className="hero-description">
-              I am a Management Information Systems student at Texas A&amp;M,
-              and I enjoy turning complicated processes into solutions that feel
-              clear, organized, and easy to use. A lot of the work I enjoy most
-              sits right between business and technology.
+              I recently graduated from Texas A&amp;M University with a degree in
+              Management Information Systems. Through my experience in business
+              analysis, data analytics, and product-focused work, I have
+              developed a passion for using technology and data to solve
+              problems, improve processes, and create meaningful experiences.
             </p>
 
             <div className="hero-buttons">
@@ -236,7 +250,7 @@ export default function App() {
                   height: "180px",
                   borderRadius: "50%",
                   overflow: "hidden",
-                  margin: "0 auto 18px auto",
+                  margin: "0 auto",
                   border: "3px solid white",
                   boxShadow: "0 10px 25px rgba(0, 0, 0, 0.1)",
                 }}
@@ -252,17 +266,6 @@ export default function App() {
                   }}
                 />
               </div>
-
-              <p className="card-label">A little about me</p>
-              <h3>
-                I enjoy making messy things feel more clear, thoughtful, and
-                easier to understand.
-              </h3>
-              <p>
-                Whether that looks like a dashboard, a report, a process
-                improvement idea, or something more creative, I love work that
-                helps people see things more clearly.
-              </p>
             </div>
           </div>
         </section>
@@ -272,27 +275,32 @@ export default function App() {
             <div>
               <p className="section-label">About Me</p>
               <h2>
-                I’m someone who likes structure, creativity, and work that feels
-                useful.
+                Building solutions at the intersection of business, technology,
+                and people.
               </h2>
             </div>
 
             <div className="about-text">
               <p>
-                I have always liked being in spaces where business and
-                technology overlap. I like understanding how something works,
-                where the friction is, and how it can be improved.
+                I have always been drawn to the space where business and
+                technology come together. I enjoy understanding how things work,
+                identifying opportunities for improvement, and finding practical
+                solutions to complex problems.
               </p>
+
               <p>
-                A lot of my experience so far has involved reporting, data
-                analysis, and process improvement, but what I really enjoy is
-                the bigger picture behind that work. I like building things that
-                make people’s jobs easier and help teams make better decisions.
+                My experience has included business analysis, reporting, data
+                analytics, and process improvement initiatives. What I enjoy
+                most, though, is understanding the bigger picture and creating
+                solutions that help people work more effectively and make better
+                decisions.
               </p>
+
               <p>
-                I also care a lot about being well rounded. To me, growth is not
-                just about academics or internships. It is also about community,
-                creativity, leadership! 
+                Outside of work, I value leadership, community involvement, and
+                creativity. Whether I am leading student organizations,
+                traveling, reading, or working on personal projects, I am always
+                looking for opportunities to learn and grow.
               </p>
             </div>
           </div>
@@ -502,9 +510,7 @@ export default function App() {
 
         <section id="outside" className="section">
           <p className="section-label">Outside of Work</p>
-          <h2 className="section-title">
-            A Little More About Me! 
-          </h2>
+          <h2 className="section-title">A Little More About Me</h2>
 
           <div
             style={{
@@ -553,33 +559,35 @@ export default function App() {
             }}
           >
             {videos.map((video) => (
-  <div className="project-card" key={video.title}>
-    <h3 style={{ marginBottom: "16px" }}>{video.title}</h3>
-    <video
-      controls
-      style={{
-        width: "100%",
-        borderRadius: "20px",
-        display: "block",
-        marginBottom: "16px",
-      }}
-    >
-      <source src={video.file} />
-      Your browser does not support the video tag.
-    </video>
+              <div className="project-card" key={video.title}>
+                <h3 style={{ marginBottom: "16px" }}>{video.title}</h3>
+                <video
+                  controls
+                  style={{
+                    width: "100%",
+                    borderRadius: "20px",
+                    display: "block",
+                    marginBottom: "16px",
+                  }}
+                >
+                  <source src={video.file} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
 
-    <p className="project-description">{video.text}</p>
-  </div>
-))}
+                <p className="project-description">{video.text}</p>
+              </div>
+            ))}
           </div>
         </section>
 
         <section id="contact" className="section">
           <div className="contact-box">
             <p className="section-label contact-label">Contact</p>
-            <h2>I’m always open to learning, connecting, and new opportunities...</h2>
+            <h2>I’m always open to learning and connecting.</h2>
             <p className="contact-text">
-              Thank you for taking the time to learn a little about me and explore my work. If you have any questions, want to connect, or just want to say hi, please feel free to reach out! I am always open to learning from others, connecting with new people, and exploring new opportunities.
+              Thank you for taking the time to learn a little about me and
+              explore my work. I would love to connect, hear your story, and
+              continue learning from others along the way.
             </p>
 
             <div className="contact-links">
