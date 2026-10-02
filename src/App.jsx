@@ -45,6 +45,7 @@ export default function App() {
     {
       company: "Cotality",
       logo: cotalityLogo,
+      logoClass: "cotality-logo-image",
       location: "Texas",
       roles: [
         {
@@ -121,6 +122,7 @@ export default function App() {
     {
       company: "Texas A&M Technology Services",
       logo: tamuLogo,
+      logoClass: "tamu-logo-image",
       location: "College Station, Texas",
       roles: [
         {
@@ -441,355 +443,378 @@ Vanessa Brody`,
     },
   ];
 
-function ProjectVisual({ type }) {
-  if (type === "affordability") {
+  function ProjectVisual({ type }) {
+    if (type === "affordability") {
+      return (
+        <div className="concept-visual immersive-visual">
+          <div className="visual-header">
+            <span>CAPITAL MARKETS DISCOVERY CENTER</span>
+            <span className="visual-status">Experience Concept</span>
+          </div>
+
+          <div className="discovery-screen">
+            <div className="curved-screen-glow"></div>
+
+            <div className="terrain terrain-one"></div>
+            <div className="terrain terrain-two"></div>
+            <div className="terrain terrain-three"></div>
+
+            <div className="floating-map">
+              <div className="usa-map-shape">
+                <span className="map-state state-one"></span>
+                <span className="map-state state-two"></span>
+                <span className="map-state state-three"></span>
+                <span className="map-state state-four"></span>
+              </div>
+
+              <div className="map-label">
+                <small>EXPLORE</small>
+                <strong>U.S. Affordability</strong>
+              </div>
+            </div>
+
+            <div className="discovery-side-panel">
+              <span>01</span>
+              <strong>National View</strong>
+
+              <span>02</span>
+              <strong>Select State</strong>
+
+              <span>03</span>
+              <strong>Explore Metrics</strong>
+            </div>
+          </div>
+
+          <div className="experience-path">
+            <span>United States</span>
+            <strong>→</strong>
+            <span>State</span>
+            <strong>→</strong>
+            <span>Metro</span>
+            <strong>→</strong>
+            <span>Affordability Metrics</span>
+          </div>
+        </div>
+      );
+    }
+
+    if (type === "dashboard") {
+      return (
+        <div className="concept-visual funds-dashboard-visual">
+          <div className="visual-header">
+            <span>FUNDS MANAGEMENT DASHBOARD</span>
+            <span className="visual-status">Dashboard Concept</span>
+          </div>
+
+          <div className="client-selector">
+            <span>CLIENT</span>
+            <strong>Selected Client ▾</strong>
+          </div>
+
+          <div className="aging-card-grid">
+            <div className="aging-card">
+              <span>0–30 DAYS</span>
+              <strong>$31.4K</strong>
+              <small>56 items</small>
+            </div>
+
+            <div className="aging-card">
+              <span>31–60 DAYS</span>
+              <strong>$14.7K</strong>
+              <small>17 items</small>
+            </div>
+
+            <div className="aging-card">
+              <span>60+ DAYS</span>
+              <strong>$28.8K</strong>
+              <small>35 items</small>
+            </div>
+          </div>
+
+          <div className="dashboard-two-column">
+            <div className="dashboard-panel">
+              <div className="panel-heading">
+                <span>AGING DISTRIBUTION</span>
+              </div>
+
+              <div className="aging-donut">
+                <div className="aging-donut-center">
+                  <strong>108</strong>
+                  <small>Total</small>
+                </div>
+              </div>
+
+              <div className="legend-row">
+                <span>
+                  <i className="legend-dot dot-a"></i>
+                  0–30
+                </span>
+                <span>
+                  <i className="legend-dot dot-b"></i>
+                  31–60
+                </span>
+                <span>
+                  <i className="legend-dot dot-c"></i>
+                  60+
+                </span>
+              </div>
+            </div>
+
+            <div className="dashboard-panel">
+              <div className="panel-heading">
+                <span>MONTH-TO-MONTH TREND</span>
+              </div>
+
+              <div className="trend-chart">
+                <div className="trend-bar bar-one"></div>
+                <div className="trend-bar bar-two"></div>
+                <div className="trend-bar bar-three"></div>
+                <div className="trend-bar bar-four"></div>
+                <div className="trend-bar bar-five"></div>
+                <div className="trend-bar bar-six"></div>
+              </div>
+
+              <div className="trend-labels">
+                <span>Jan</span>
+                <span>Feb</span>
+                <span>Mar</span>
+                <span>Apr</span>
+                <span>May</span>
+                <span>Jun</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="year-trend">
+            <span>YEAR-TO-YEAR</span>
+
+            <div className="year-line">
+              <span className="year-point p1"></span>
+              <span className="year-point p2"></span>
+              <span className="year-point p3"></span>
+              <span className="year-point p4"></span>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    if (type === "analysis") {
+      return (
+        <div className="concept-visual returns-analysis-visual">
+          <div className="visual-header">
+            <span>RETURNS & REFUNDS ANALYSIS</span>
+            <span className="visual-status">Analysis Concept</span>
+          </div>
+
+          <div className="analysis-summary">
+            <div className="analysis-total">
+              <small>TRANSACTIONS REVIEWED</small>
+              <strong>150K+</strong>
+            </div>
+
+            <div className="analysis-split">
+              <div>
+                <span>Returns</span>
+                <strong>74%</strong>
+              </div>
+
+              <div>
+                <span>Refunds</span>
+                <strong>21%</strong>
+              </div>
+
+              <div>
+                <span>Other</span>
+                <strong>5%</strong>
+              </div>
+            </div>
+          </div>
+
+          <div className="analysis-content-grid">
+            <div className="root-cause-panel">
+              <span className="analysis-label">
+                ROOT CAUSE DISTRIBUTION
+              </span>
+
+              <div className="root-cause-list">
+                <div>
+                  <span>R1</span>
+                  <div>
+                    <i style={{ width: "88%" }}></i>
+                  </div>
+                  <strong>32%</strong>
+                </div>
+
+                <div>
+                  <span>R2</span>
+                  <div>
+                    <i style={{ width: "67%" }}></i>
+                  </div>
+                  <strong>24%</strong>
+                </div>
+
+                <div>
+                  <span>R5</span>
+                  <div>
+                    <i style={{ width: "52%" }}></i>
+                  </div>
+                  <strong>18%</strong>
+                </div>
+
+                <div>
+                  <span>R10</span>
+                  <div>
+                    <i style={{ width: "39%" }}></i>
+                  </div>
+                  <strong>14%</strong>
+                </div>
+
+                <div>
+                  <span>R11</span>
+                  <div>
+                    <i style={{ width: "28%" }}></i>
+                  </div>
+                  <strong>12%</strong>
+                </div>
+              </div>
+            </div>
+
+            <div className="client-pattern-panel">
+              <span className="analysis-label">
+                PATTERN CONCENTRATION
+              </span>
+
+              <div className="heatmap">
+                {Array.from({ length: 30 }).map((_, index) => (
+                  <span
+                    key={index}
+                    className={`heat-cell heat-${(index % 5) + 1}`}
+                  ></span>
+                ))}
+              </div>
+
+              <div className="heatmap-label">
+                <span>Lower frequency</span>
+                <span>Higher frequency</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="analysis-footer">
+            <span>Clean</span>
+            <strong>→</strong>
+            <span>Group</span>
+            <strong>→</strong>
+            <span>Analyze</span>
+            <strong>→</strong>
+            <span>Identify Root Cause</span>
+          </div>
+        </div>
+      );
+    }
+
     return (
-      <div className="concept-visual immersive-visual">
+      <div className="concept-visual repository-visual">
         <div className="visual-header">
-          <span>CAPITAL MARKETS DISCOVERY CENTER</span>
-          <span className="visual-status">Experience Concept</span>
+          <span>CENTRALIZED REPORTING REPOSITORY</span>
+          <span className="visual-status">Architecture Concept</span>
         </div>
 
-        <div className="discovery-screen">
-          <div className="curved-screen-glow"></div>
-
-          <div className="terrain terrain-one"></div>
-          <div className="terrain terrain-two"></div>
-          <div className="terrain terrain-three"></div>
-
-          <div className="floating-map">
-            <div className="usa-map-shape">
-              <span className="map-state state-one"></span>
-              <span className="map-state state-two"></span>
-              <span className="map-state state-three"></span>
-              <span className="map-state state-four"></span>
+        <div className="repository-layout">
+          <div className="source-databases">
+            <div className="database-node">
+              <span>TABLE</span>
+              <strong>Client</strong>
+              <small>Fields A–F</small>
             </div>
 
-            <div className="map-label">
-              <small>EXPLORE</small>
-              <strong>U.S. Affordability</strong>
+            <div className="database-node">
+              <span>VIEW</span>
+              <strong>Funds</strong>
+              <small>Fields G–L</small>
+            </div>
+
+            <div className="database-node">
+              <span>TABLE</span>
+              <strong>Refunds</strong>
+              <small>Fields M–R</small>
+            </div>
+
+            <div className="database-node">
+              <span>VIEW</span>
+              <strong>History</strong>
+              <small>Fields S–Z</small>
             </div>
           </div>
 
-          <div className="discovery-side-panel">
-            <span>01</span>
-            <strong>National View</strong>
+          <div className="repository-query-flow">
+            <div className="flow-line line-a"></div>
+            <div className="flow-line line-b"></div>
+            <div className="flow-line line-c"></div>
+            <div className="flow-line line-d"></div>
 
-            <span>02</span>
-            <strong>Select State</strong>
+            <div className="sql-query-node">
+              <span>SQL</span>
+              <strong>Central Query</strong>
+              <small>joins · logic · validation</small>
+            </div>
+          </div>
 
-            <span>03</span>
-            <strong>Explore Metrics</strong>
+          <div className="central-view">
+            <div className="view-heading">
+              <span>CENTRALIZED VIEW</span>
+              <strong>Reporting Repository</strong>
+            </div>
+
+            <div className="repository-table">
+              <div>
+                <span>Client</span>
+                <span>Amount</span>
+                <span>Status</span>
+                <span>Aging</span>
+              </div>
+
+              <div>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+              </div>
+
+              <div>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+              </div>
+
+              <div>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="experience-path">
-          <span>United States</span>
-          <strong>→</strong>
-          <span>State</span>
-          <strong>→</strong>
-          <span>Metro</span>
-          <strong>→</strong>
-          <span>Affordability Metrics</span>
+        <div className="repository-benefit">
+          <div>
+            <small>BEFORE</small>
+            <strong>Multiple tables + views</strong>
+          </div>
+
+          <span className="benefit-arrow">→</span>
+
+          <div>
+            <small>AFTER</small>
+            <strong>One reusable reporting source</strong>
+          </div>
         </div>
       </div>
     );
   }
-
-  if (type === "dashboard") {
-    return (
-      <div className="concept-visual funds-dashboard-visual">
-        <div className="visual-header">
-          <span>FUNDS MANAGEMENT DASHBOARD</span>
-          <span className="visual-status">Dashboard Concept</span>
-        </div>
-
-        <div className="client-selector">
-          <span>CLIENT</span>
-          <strong>Selected Client ▾</strong>
-        </div>
-
-        <div className="aging-card-grid">
-          <div className="aging-card">
-            <span>0–30 DAYS</span>
-            <strong>$31.4K</strong>
-            <small>56 items</small>
-          </div>
-
-          <div className="aging-card">
-            <span>31–60 DAYS</span>
-            <strong>$14.7K</strong>
-            <small>17 items</small>
-          </div>
-
-          <div className="aging-card">
-            <span>60+ DAYS</span>
-            <strong>$28.8K</strong>
-            <small>35 items</small>
-          </div>
-        </div>
-
-        <div className="dashboard-two-column">
-          <div className="dashboard-panel">
-            <div className="panel-heading">
-              <span>AGING DISTRIBUTION</span>
-            </div>
-
-            <div className="aging-donut">
-              <div className="aging-donut-center">
-                <strong>108</strong>
-                <small>Total</small>
-              </div>
-            </div>
-
-            <div className="legend-row">
-              <span><i className="legend-dot dot-a"></i>0–30</span>
-              <span><i className="legend-dot dot-b"></i>31–60</span>
-              <span><i className="legend-dot dot-c"></i>60+</span>
-            </div>
-          </div>
-
-          <div className="dashboard-panel">
-            <div className="panel-heading">
-              <span>MONTH-TO-MONTH TREND</span>
-            </div>
-
-            <div className="trend-chart">
-              <div className="trend-bar bar-one"></div>
-              <div className="trend-bar bar-two"></div>
-              <div className="trend-bar bar-three"></div>
-              <div className="trend-bar bar-four"></div>
-              <div className="trend-bar bar-five"></div>
-              <div className="trend-bar bar-six"></div>
-            </div>
-
-            <div className="trend-labels">
-              <span>Jan</span>
-              <span>Feb</span>
-              <span>Mar</span>
-              <span>Apr</span>
-              <span>May</span>
-              <span>Jun</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="year-trend">
-          <span>YEAR-TO-YEAR</span>
-
-          <div className="year-line">
-            <span className="year-point p1"></span>
-            <span className="year-point p2"></span>
-            <span className="year-point p3"></span>
-            <span className="year-point p4"></span>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  if (type === "analysis") {
-    return (
-      <div className="concept-visual returns-analysis-visual">
-        <div className="visual-header">
-          <span>RETURNS & REFUNDS ANALYSIS</span>
-          <span className="visual-status">Analysis Concept</span>
-        </div>
-
-        <div className="analysis-summary">
-          <div className="analysis-total">
-            <small>TRANSACTIONS REVIEWED</small>
-            <strong>150K+</strong>
-          </div>
-
-          <div className="analysis-split">
-            <div>
-              <span>Returns</span>
-              <strong>74%</strong>
-            </div>
-
-            <div>
-              <span>Refunds</span>
-              <strong>21%</strong>
-            </div>
-
-            <div>
-              <span>Other</span>
-              <strong>5%</strong>
-            </div>
-          </div>
-        </div>
-
-        <div className="analysis-content-grid">
-          <div className="root-cause-panel">
-            <span className="analysis-label">ROOT CAUSE DISTRIBUTION</span>
-
-            <div className="root-cause-list">
-              <div>
-                <span>R1</span>
-                <div><i style={{ width: "88%" }}></i></div>
-                <strong>32%</strong>
-              </div>
-
-              <div>
-                <span>R2</span>
-                <div><i style={{ width: "67%" }}></i></div>
-                <strong>24%</strong>
-              </div>
-
-              <div>
-                <span>R5</span>
-                <div><i style={{ width: "52%" }}></i></div>
-                <strong>18%</strong>
-              </div>
-
-              <div>
-                <span>R10</span>
-                <div><i style={{ width: "39%" }}></i></div>
-                <strong>14%</strong>
-              </div>
-
-              <div>
-                <span>R11</span>
-                <div><i style={{ width: "28%" }}></i></div>
-                <strong>12%</strong>
-              </div>
-            </div>
-          </div>
-
-          <div className="client-pattern-panel">
-            <span className="analysis-label">PATTERN CONCENTRATION</span>
-
-            <div className="heatmap">
-              {Array.from({ length: 30 }).map((_, index) => (
-                <span
-                  key={index}
-                  className={`heat-cell heat-${(index % 5) + 1}`}
-                ></span>
-              ))}
-            </div>
-
-            <div className="heatmap-label">
-              <span>Lower frequency</span>
-              <span>Higher frequency</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="analysis-footer">
-          <span>Clean</span>
-          <strong>→</strong>
-          <span>Group</span>
-          <strong>→</strong>
-          <span>Analyze</span>
-          <strong>→</strong>
-          <span>Identify Root Cause</span>
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div className="concept-visual repository-visual">
-      <div className="visual-header">
-        <span>CENTRALIZED REPORTING REPOSITORY</span>
-        <span className="visual-status">Architecture Concept</span>
-      </div>
-
-      <div className="repository-layout">
-        <div className="source-databases">
-          <div className="database-node">
-            <span>TABLE</span>
-            <strong>Client</strong>
-            <small>Fields A–F</small>
-          </div>
-
-          <div className="database-node">
-            <span>VIEW</span>
-            <strong>Funds</strong>
-            <small>Fields G–L</small>
-          </div>
-
-          <div className="database-node">
-            <span>TABLE</span>
-            <strong>Refunds</strong>
-            <small>Fields M–R</small>
-          </div>
-
-          <div className="database-node">
-            <span>VIEW</span>
-            <strong>History</strong>
-            <small>Fields S–Z</small>
-          </div>
-        </div>
-
-        <div className="repository-query-flow">
-          <div className="flow-line line-a"></div>
-          <div className="flow-line line-b"></div>
-          <div className="flow-line line-c"></div>
-          <div className="flow-line line-d"></div>
-
-          <div className="sql-query-node">
-            <span>SQL</span>
-            <strong>Central Query</strong>
-            <small>joins · logic · validation</small>
-          </div>
-        </div>
-
-        <div className="central-view">
-          <div className="view-heading">
-            <span>CENTRALIZED VIEW</span>
-            <strong>Reporting Repository</strong>
-          </div>
-
-          <div className="repository-table">
-            <div>
-              <span>Client</span>
-              <span>Amount</span>
-              <span>Status</span>
-              <span>Aging</span>
-            </div>
-
-            <div>
-              <i></i>
-              <i></i>
-              <i></i>
-              <i></i>
-            </div>
-
-            <div>
-              <i></i>
-              <i></i>
-              <i></i>
-              <i></i>
-            </div>
-
-            <div>
-              <i></i>
-              <i></i>
-              <i></i>
-              <i></i>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="repository-benefit">
-        <div>
-          <small>BEFORE</small>
-          <strong>Multiple tables + views</strong>
-        </div>
-
-        <span className="benefit-arrow">→</span>
-
-        <div>
-          <small>AFTER</small>
-          <strong>One reusable reporting source</strong>
-        </div>
-      </div>
-    </div>
-  );
-}
 
   return (
     <div className="site-shell">
@@ -936,9 +961,9 @@ function ProjectVisual({ type }) {
                 </p>
 
                 <p>
-                  I also care deeply about leadership, creativity, and
-                  community. Some of the experiences that have shaped me most
-                  have happened outside of a formal job description.
+                  I also care deeply about leadership, creativity, and community.
+                  Some of the experiences that have shaped me most have happened
+                  outside of a formal job description.
                 </p>
               </div>
             </div>
@@ -958,10 +983,17 @@ function ProjectVisual({ type }) {
 
             <div className="experience-list">
               {experience.map((company) => (
-                <article className="experience-card" key={company.company}>
+                <article
+                  className="experience-card"
+                  key={company.company}
+                >
                   <div className="company-side">
                     <div className="company-logo">
-                      <img src={company.logo} alt={`${company.company} logo`} />
+                      <img
+                        src={company.logo}
+                        alt={`${company.company} logo`}
+                        className={`company-logo-image ${company.logoClass}`}
+                      />
                     </div>
 
                     <h3>{company.company}</h3>
@@ -981,12 +1013,10 @@ function ProjectVisual({ type }) {
 
                         <div className="role-body">
                           <div className="role-title-row">
-                            <div>
-                              <h4>{role.title}</h4>
-                              <span>
-                                {role.type} · {role.dates}
-                              </span>
-                            </div>
+                            <h4>{role.title}</h4>
+                            <span>
+                              {role.type} · {role.dates}
+                            </span>
                           </div>
 
                           <p className="role-description">
@@ -995,7 +1025,10 @@ function ProjectVisual({ type }) {
 
                           <div className="bullet-grid">
                             {role.bullets.map((bullet) => (
-                              <div className="role-bullet" key={bullet}>
+                              <div
+                                className="role-bullet"
+                                key={bullet}
+                              >
                                 <span>↗</span>
                                 <p>{bullet}</p>
                               </div>
@@ -1019,7 +1052,7 @@ function ProjectVisual({ type }) {
           <section id="projects" className="section reveal">
             <div className="section-label">SELECTED WORK</div>
 
-            <div className="section-heading-row projects-heading">
+            <div className="section-heading-row">
               <h2>Four projects. Four different kinds of problems.</h2>
 
               <p>
@@ -1043,21 +1076,29 @@ function ProjectVisual({ type }) {
 
                     <h3>{project.title}</h3>
 
-                    <p className="project-subtitle">{project.subtitle}</p>
+                    <p className="project-subtitle">
+                      {project.subtitle}
+                    </p>
 
                     <div className="project-detail-grid">
                       <div>
-                        <span className="detail-label">Why it mattered</span>
+                        <span className="detail-label">
+                          Why it mattered
+                        </span>
                         <p>{project.importance}</p>
                       </div>
 
                       <div>
-                        <span className="detail-label">My contribution</span>
+                        <span className="detail-label">
+                          My contribution
+                        </span>
                         <p>{project.contribution}</p>
                       </div>
 
                       <div>
-                        <span className="detail-label">What I worked on</span>
+                        <span className="detail-label">
+                          What I worked on
+                        </span>
                         <p>{project.execution}</p>
                       </div>
 
@@ -1086,7 +1127,10 @@ function ProjectVisual({ type }) {
             </div>
           </section>
 
-          <section id="recommendations" className="section reveal">
+          <section
+            id="recommendations"
+            className="section reveal"
+          >
             <div className="section-label">RECOMMENDATIONS</div>
 
             <div className="section-heading-row">
@@ -1137,7 +1181,9 @@ function ProjectVisual({ type }) {
           </section>
 
           <section id="leadership" className="section reveal">
-            <div className="section-label">LEADERSHIP & COMMUNITY</div>
+            <div className="section-label">
+              LEADERSHIP & COMMUNITY
+            </div>
 
             <div className="section-heading-row">
               <h2>
@@ -1153,9 +1199,15 @@ function ProjectVisual({ type }) {
 
             <div className="leadership-grid">
               {involvement.map((item) => (
-                <article className="leadership-card" key={item.title}>
+                <article
+                  className="leadership-card"
+                  key={item.title}
+                >
                   <div className="leadership-logo">
-                    <img src={item.logo} alt={`${item.title} logo`} />
+                    <img
+                      src={item.logo}
+                      alt={`${item.title} logo`}
+                    />
                   </div>
 
                   <div>
@@ -1171,11 +1223,13 @@ function ProjectVisual({ type }) {
           <section className="section reveal">
             <div className="skills-section">
               <div className="skills-heading">
-                <div className="section-label light-label">SKILLS</div>
+                <div className="section-label light-label">
+                  SKILLS
+                </div>
 
                 <h2>
                   Technical when I need to be.
-                  <span>Human always.</span>
+                  <span> Human always.</span>
                 </h2>
 
                 <p>
@@ -1187,7 +1241,10 @@ function ProjectVisual({ type }) {
 
               <div className="skills-grid">
                 {skillGroups.map((group) => (
-                  <article className="skill-card" key={group.title}>
+                  <article
+                    className="skill-card"
+                    key={group.title}
+                  >
                     <h3>{group.title}</h3>
 
                     <div className="skill-list">
@@ -1215,9 +1272,15 @@ function ProjectVisual({ type }) {
 
             <div className="interest-grid">
               {interests.map((interest) => (
-                <article className="interest-card" key={interest.title}>
+                <article
+                  className="interest-card"
+                  key={interest.title}
+                >
                   <div className="interest-image">
-                    <img src={interest.image} alt={interest.title} />
+                    <img
+                      src={interest.image}
+                      alt={interest.title}
+                    />
                   </div>
 
                   <div className="interest-copy">
@@ -1235,9 +1298,15 @@ function ProjectVisual({ type }) {
 
             <div className="video-grid">
               {videos.map((video) => (
-                <article className="video-card" key={video.title}>
+                <article
+                  className="video-card"
+                  key={video.title}
+                >
                   <video controls preload="metadata">
-                    <source src={video.file} type="video/mp4" />
+                    <source
+                      src={video.file}
+                      type="video/mp4"
+                    />
                   </video>
 
                   <div>
@@ -1254,7 +1323,9 @@ function ProjectVisual({ type }) {
               <div className="contact-glow"></div>
 
               <div>
-                <span className="contact-label">LET’S CONNECT</span>
+                <span className="contact-label">
+                  LET’S CONNECT
+                </span>
 
                 <h2>
                   I’m always open to learning,
