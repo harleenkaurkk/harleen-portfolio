@@ -441,40 +441,355 @@ Vanessa Brody`,
     },
   ];
 
-  function ProjectVisual({ type }) {
-    if (type === "affordability") {
-      return (
-        <div className="concept-visual affordability-visual">
-          <div className="visual-header">
-            <span>MARKET AFFORDABILITY</span>
-            <span className="visual-status">Concept</span>
-          </div>
+function ProjectVisual({ type }) {
+  if (type === "affordability") {
+    return (
+      <div className="concept-visual immersive-visual">
+        <div className="visual-header">
+          <span>CAPITAL MARKETS DISCOVERY CENTER</span>
+          <span className="visual-status">Experience Concept</span>
+        </div>
 
-          <div className="affordability-score">
-            <div>
-              <small>Affordability Index</small>
-              <strong>72.4</strong>
+        <div className="discovery-screen">
+          <div className="curved-screen-glow"></div>
+
+          <div className="terrain terrain-one"></div>
+          <div className="terrain terrain-two"></div>
+          <div className="terrain terrain-three"></div>
+
+          <div className="floating-map">
+            <div className="usa-map-shape">
+              <span className="map-state state-one"></span>
+              <span className="map-state state-two"></span>
+              <span className="map-state state-three"></span>
+              <span className="map-state state-four"></span>
             </div>
-            <div className="score-ring">
-              <span>72</span>
+
+            <div className="map-label">
+              <small>EXPLORE</small>
+              <strong>U.S. Affordability</strong>
             </div>
           </div>
 
-          <div className="market-lines">
-            <span className="line line-one"></span>
-            <span className="line line-two"></span>
-            <span className="line line-three"></span>
-            <span className="line line-four"></span>
-          </div>
+          <div className="discovery-side-panel">
+            <span>01</span>
+            <strong>National View</strong>
 
-          <div className="visual-bottom-labels">
-            <span>Home Price</span>
-            <span>Mortgage</span>
-            <span>Income</span>
+            <span>02</span>
+            <strong>Select State</strong>
+
+            <span>03</span>
+            <strong>Explore Metrics</strong>
           </div>
         </div>
-      );
-    }
+
+        <div className="experience-path">
+          <span>United States</span>
+          <strong>→</strong>
+          <span>State</span>
+          <strong>→</strong>
+          <span>Metro</span>
+          <strong>→</strong>
+          <span>Affordability Metrics</span>
+        </div>
+      </div>
+    );
+  }
+
+  if (type === "dashboard") {
+    return (
+      <div className="concept-visual funds-dashboard-visual">
+        <div className="visual-header">
+          <span>FUNDS MANAGEMENT DASHBOARD</span>
+          <span className="visual-status">Dashboard Concept</span>
+        </div>
+
+        <div className="client-selector">
+          <span>CLIENT</span>
+          <strong>Selected Client ▾</strong>
+        </div>
+
+        <div className="aging-card-grid">
+          <div className="aging-card">
+            <span>0–30 DAYS</span>
+            <strong>$31.4K</strong>
+            <small>56 items</small>
+          </div>
+
+          <div className="aging-card">
+            <span>31–60 DAYS</span>
+            <strong>$14.7K</strong>
+            <small>17 items</small>
+          </div>
+
+          <div className="aging-card">
+            <span>60+ DAYS</span>
+            <strong>$28.8K</strong>
+            <small>35 items</small>
+          </div>
+        </div>
+
+        <div className="dashboard-two-column">
+          <div className="dashboard-panel">
+            <div className="panel-heading">
+              <span>AGING DISTRIBUTION</span>
+            </div>
+
+            <div className="aging-donut">
+              <div className="aging-donut-center">
+                <strong>108</strong>
+                <small>Total</small>
+              </div>
+            </div>
+
+            <div className="legend-row">
+              <span><i className="legend-dot dot-a"></i>0–30</span>
+              <span><i className="legend-dot dot-b"></i>31–60</span>
+              <span><i className="legend-dot dot-c"></i>60+</span>
+            </div>
+          </div>
+
+          <div className="dashboard-panel">
+            <div className="panel-heading">
+              <span>MONTH-TO-MONTH TREND</span>
+            </div>
+
+            <div className="trend-chart">
+              <div className="trend-bar bar-one"></div>
+              <div className="trend-bar bar-two"></div>
+              <div className="trend-bar bar-three"></div>
+              <div className="trend-bar bar-four"></div>
+              <div className="trend-bar bar-five"></div>
+              <div className="trend-bar bar-six"></div>
+            </div>
+
+            <div className="trend-labels">
+              <span>Jan</span>
+              <span>Feb</span>
+              <span>Mar</span>
+              <span>Apr</span>
+              <span>May</span>
+              <span>Jun</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="year-trend">
+          <span>YEAR-TO-YEAR</span>
+
+          <div className="year-line">
+            <span className="year-point p1"></span>
+            <span className="year-point p2"></span>
+            <span className="year-point p3"></span>
+            <span className="year-point p4"></span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (type === "analysis") {
+    return (
+      <div className="concept-visual returns-analysis-visual">
+        <div className="visual-header">
+          <span>RETURNS & REFUNDS ANALYSIS</span>
+          <span className="visual-status">Analysis Concept</span>
+        </div>
+
+        <div className="analysis-summary">
+          <div className="analysis-total">
+            <small>TRANSACTIONS REVIEWED</small>
+            <strong>150K+</strong>
+          </div>
+
+          <div className="analysis-split">
+            <div>
+              <span>Returns</span>
+              <strong>74%</strong>
+            </div>
+
+            <div>
+              <span>Refunds</span>
+              <strong>21%</strong>
+            </div>
+
+            <div>
+              <span>Other</span>
+              <strong>5%</strong>
+            </div>
+          </div>
+        </div>
+
+        <div className="analysis-content-grid">
+          <div className="root-cause-panel">
+            <span className="analysis-label">ROOT CAUSE DISTRIBUTION</span>
+
+            <div className="root-cause-list">
+              <div>
+                <span>R1</span>
+                <div><i style={{ width: "88%" }}></i></div>
+                <strong>32%</strong>
+              </div>
+
+              <div>
+                <span>R2</span>
+                <div><i style={{ width: "67%" }}></i></div>
+                <strong>24%</strong>
+              </div>
+
+              <div>
+                <span>R5</span>
+                <div><i style={{ width: "52%" }}></i></div>
+                <strong>18%</strong>
+              </div>
+
+              <div>
+                <span>R10</span>
+                <div><i style={{ width: "39%" }}></i></div>
+                <strong>14%</strong>
+              </div>
+
+              <div>
+                <span>R11</span>
+                <div><i style={{ width: "28%" }}></i></div>
+                <strong>12%</strong>
+              </div>
+            </div>
+          </div>
+
+          <div className="client-pattern-panel">
+            <span className="analysis-label">PATTERN CONCENTRATION</span>
+
+            <div className="heatmap">
+              {Array.from({ length: 30 }).map((_, index) => (
+                <span
+                  key={index}
+                  className={`heat-cell heat-${(index % 5) + 1}`}
+                ></span>
+              ))}
+            </div>
+
+            <div className="heatmap-label">
+              <span>Lower frequency</span>
+              <span>Higher frequency</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="analysis-footer">
+          <span>Clean</span>
+          <strong>→</strong>
+          <span>Group</span>
+          <strong>→</strong>
+          <span>Analyze</span>
+          <strong>→</strong>
+          <span>Identify Root Cause</span>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="concept-visual repository-visual">
+      <div className="visual-header">
+        <span>CENTRALIZED REPORTING REPOSITORY</span>
+        <span className="visual-status">Architecture Concept</span>
+      </div>
+
+      <div className="repository-layout">
+        <div className="source-databases">
+          <div className="database-node">
+            <span>TABLE</span>
+            <strong>Client</strong>
+            <small>Fields A–F</small>
+          </div>
+
+          <div className="database-node">
+            <span>VIEW</span>
+            <strong>Funds</strong>
+            <small>Fields G–L</small>
+          </div>
+
+          <div className="database-node">
+            <span>TABLE</span>
+            <strong>Refunds</strong>
+            <small>Fields M–R</small>
+          </div>
+
+          <div className="database-node">
+            <span>VIEW</span>
+            <strong>History</strong>
+            <small>Fields S–Z</small>
+          </div>
+        </div>
+
+        <div className="repository-query-flow">
+          <div className="flow-line line-a"></div>
+          <div className="flow-line line-b"></div>
+          <div className="flow-line line-c"></div>
+          <div className="flow-line line-d"></div>
+
+          <div className="sql-query-node">
+            <span>SQL</span>
+            <strong>Central Query</strong>
+            <small>joins · logic · validation</small>
+          </div>
+        </div>
+
+        <div className="central-view">
+          <div className="view-heading">
+            <span>CENTRALIZED VIEW</span>
+            <strong>Reporting Repository</strong>
+          </div>
+
+          <div className="repository-table">
+            <div>
+              <span>Client</span>
+              <span>Amount</span>
+              <span>Status</span>
+              <span>Aging</span>
+            </div>
+
+            <div>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+            </div>
+
+            <div>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+            </div>
+
+            <div>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="repository-benefit">
+        <div>
+          <small>BEFORE</small>
+          <strong>Multiple tables + views</strong>
+        </div>
+
+        <span className="benefit-arrow">→</span>
+
+        <div>
+          <small>AFTER</small>
+          <strong>One reusable reporting source</strong>
+        </div>
+      </div>
+    </div>
+  );
+}
 
     if (type === "dashboard") {
       return (
