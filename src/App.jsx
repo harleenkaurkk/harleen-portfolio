@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import headshot from "./assets/headshot.png";
 
 // Logos
@@ -18,156 +19,294 @@ import nyVideo from "./assets/Newyork.mp4";
 import punjabVideo from "./assets/Punjab.mp4";
 
 export default function App() {
-  const projects = [
+  useEffect(() => {
+    const elements = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("reveal-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.12,
+      }
+    );
+
+    elements.forEach((element) => observer.observe(element));
+
+    return () => observer.disconnect();
+  }, []);
+
+  const experience = [
     {
-      title: "Funds Management Dashboard",
-      subtitle: "Interactive reporting tool for better visibility",
-      problem:
-        "The team needed a clearer way to view funds on account, client billables, and escrow activity without having to piece together information from multiple places.",
-      solution:
-        "I built an interactive dashboard that brought those data points into one place and made the reporting easier to read, filter, and use for day-to-day decision making.",
-      tools: "Excel, VBA, Data Visualization",
-      impact:
-        "It made reporting more organized and helped stakeholders get a quicker, clearer view of important financial activity.",
+      company: "Cotality",
+      logo: cotalityLogo,
+      location: "Texas",
+      roles: [
+        {
+          title: "R&D Product Analyst Intern",
+          type: "Internship",
+          dates: "June 2026 – August 2026",
+          description:
+            "Worked across product discovery, experience design, market research, and data storytelling for Cotality's Discovery Center. My main project focused on designing and prototyping a new Capital Markets affordability experience.",
+          highlights: [
+            "Led discovery and requirements gathering across Capital Markets, analytics, economics, and product teams.",
+            "Translated housing, mortgage, and economic concepts into product requirements, wireframes, and interactive experiences.",
+            "Collaborated with UX to develop prototypes and shape the end-to-end user experience.",
+            "Conducted competitive research to support product positioning for climate-risk and property-impact solutions.",
+            "Presented product concepts, research, and recommendations to product leaders, executives, and cross-functional stakeholders.",
+          ],
+          tags: [
+            "Product Discovery",
+            "Stakeholder Interviews",
+            "Requirements Gathering",
+            "Wireframing",
+            "Prototyping",
+            "Competitive Intelligence",
+            "Product Strategy",
+            "Executive Storytelling",
+          ],
+        },
+        {
+          title: "Associate Professional Business Analyst",
+          type: "Full-time",
+          dates: "September 2025 – June 2026",
+          description:
+            "Supported Funds Management operations through business analysis, reporting, data extraction, and process automation.",
+          highlights: [
+            "Analyzed operational processes and identified opportunities for process improvement and re-engineering.",
+            "Worked with SQL and internal databases to extract, transform, and organize data for business reporting.",
+            "Developed dashboards and reporting tools that improved visibility into operational activity.",
+            "Built VBA-driven automation to reduce repetitive manual work and improve reporting turnaround time.",
+          ],
+          tags: [
+            "SQL",
+            "Excel",
+            "VBA",
+            "Business Analysis",
+            "Process Improvement",
+            "Reporting",
+            "Automation",
+          ],
+        },
+        {
+          title: "Business Process Improvement Intern",
+          type: "Internship",
+          dates: "June 2025 – August 2025",
+          description:
+            "Supported Funds Management by analyzing workflows, identifying inefficiencies, and helping build more structured reporting and process improvement solutions.",
+          highlights: [
+            "Analyzed operational workflows and recurring process issues.",
+            "Built reporting dashboards and organized data for analysis.",
+            "Queried internal databases using SQL.",
+            "Worked with business analysts and cross-functional teams to explore automation opportunities.",
+          ],
+          tags: [
+            "SQL",
+            "Excel",
+            "Dashboard Development",
+            "Process Analysis",
+            "Data Analysis",
+          ],
+        },
+      ],
     },
     {
-      title: "Returns & Refunds Analysis",
-      subtitle: "Finding patterns in a large operational dataset",
-      problem:
-        "Returns and refunds were happening often, but it was hard to clearly see the trends, recurring issues, and biggest drivers behind them.",
-      solution:
-        "I worked through a large dataset, cleaned inconsistent fields, and organized the information into a more structured view so the team could better understand where issues were coming from.",
-      tools: "Excel, Data Cleaning, Analysis",
-      impact:
-        "This helped surface recurring return drivers and supported better conversations around process improvement.",
-    },
-    {
-      title: "Business Process Automation",
-      subtitle: "Making repetitive reporting more efficient",
-      problem:
-        "Some recurring reporting processes were very manual, which made them time consuming and harder to keep consistent.",
-      solution:
-        "I developed VBA-based automation and reporting logic to simplify repetitive tasks and make the process smoother for the team.",
-      tools: "Excel, VBA, Process Improvement",
-      impact:
-        "It reduced manual effort and made recurring workflows more efficient and easier to manage.",
+      company: "Texas A&M Technology Services",
+      logo: tamuLogo,
+      location: "College Station, Texas",
+      roles: [
+        {
+          title: "Student Technician",
+          type: "Part-time",
+          dates: "January 2024 – August 2024",
+          description:
+            "Provided technical support for the Biomedical and Industrial Systems Department at Texas A&M University.",
+          highlights: [
+            "Supported faculty, students, and staff with hardware, software, and network issues.",
+            "Reimaged and configured devices for academic and research use.",
+            "Helped train new staff on troubleshooting processes and technical tasks.",
+            "Supported reliable day-to-day technology operations across the department.",
+          ],
+          tags: [
+            "IT Support",
+            "Troubleshooting",
+            "Device Reimaging",
+            "Network Support",
+            "Training",
+          ],
+        },
+      ],
     },
   ];
 
-  const experience = [
-  {
-    company: "Cotality",
-    logo: cotalityLogo,
-    location: "Irving, Texas",
-    roles: [
-      {
-        title: "Product Analyst Intern",
-        type: "Internship",
-        dates: "June 2026 – Present",
-        description:
-          "Currently supporting product-focused work at Cotality, with a focus on understanding business needs, exploring data-driven solutions, and contributing to product and discovery center initiatives.",
-        skills:
-          "Product Strategy, Data Analysis, Data Visualization, Stakeholder Managerment, Cross-Functional Collaboration, User Experience (UX)",
-      },
-      {
-        title: "Associate Professional Business Analyst",
-        type: "Part-time",
-        dates: "September 2025 – June 2026",
-        description:
-          "Supported Funds Management operations by analyzing processes, identifying inefficiencies, and helping propose re-engineering opportunities. Worked with SQL, internal databases, dashboards, and VBA/Python driven automation to improve reporting, reduce manual effort, and create clearer visibility for business decision-making.",
-        skills:
-          "Advanced SQL, Tableau, Power BI, Python, Microsoft Excel, VBA, Process Automation, Business Reporting, Data Transformation, Internal Database Management",
-      },
-      {
-        title: "Business Process Improvement Intern",
-        type: "Internship",
-        dates: "June 2025 – August 2025",
-        description:
-          "Supported Funds Management by analyzing workflows, identifying process inefficiencies, and assisting with operational improvement initiatives. Helped build reporting dashboards, queried internal databases using SQL, and organized data for business reporting and analysis.",
-        skills:
-          "SQL, Tableau, Power BI, Microsoft Excel, Dashboard Development, Data Visualization, Data Analysis, Business Reporting, Process Documentation, Workflow Analysis",
-      },
-    ],
-  },
-  {
-    company: "Texas A&M Technology Services",
-    logo: tamuLogo,
-    location: "College Station, Texas",
-    roles: [
-      {
-        title: "Student Technician",
-        type: "Part-time",
-        dates: "January 2024 – August 2024",
-        description:
-          "Provided technical support for the Biomedical and Industrial Systems Department at Texas A&M University. Assisted with device reimaging, software setup, hardware troubleshooting, network connectivity issues, and training new staff on basic troubleshooting processes.",
-        skills:
-          "IT Support, Hardware Troubleshooting, Software Installation, Device Reimaging, Network Connectivity, Customer Support, Technical Training",
-      },
-    ],
-  },
-];
+  const projects = [
+    {
+      eyebrow: "Featured Product Work",
+      title: "Capital Markets Affordability Experience",
+      subtitle: "Product Discovery · Experience Design · Data Storytelling",
+      problem:
+        "Explore how complex housing affordability data could be turned into an intuitive experience for Capital Markets clients.",
+      work:
+        "I researched affordability frameworks and worked with concepts including housing prices, mortgage rates, household income, and market accessibility. I conducted stakeholder conversations, gathered requirements, helped define the product story, and collaborated with UX to turn those ideas into wireframes and an interactive prototype.",
+      outcome:
+        "The concept allowed users to explore affordability nationally, compare markets, drill into metro-level views, and understand how affordability changes over time.",
+      learned:
+        "This project gave me hands-on experience across the product lifecycle—from discovery and requirements gathering to UX collaboration, prototyping, storytelling, and executive presentation.",
+      tags: [
+        "Product Discovery",
+        "Stakeholder Research",
+        "Wireframing",
+        "UX Collaboration",
+        "Prototyping",
+        "Capital Markets",
+      ],
+      featured: true,
+    },
+    {
+      eyebrow: "Business Analysis",
+      title: "Funds Management Dashboard",
+      subtitle: "Interactive reporting for better visibility",
+      problem:
+        "The team needed a clearer way to view funds on account, client billables, and escrow activity without pulling information from multiple places.",
+      work:
+        "I built an interactive dashboard that brought key information into one place and made the reporting easier to read, filter, and use for day-to-day decision making.",
+      outcome:
+        "The dashboard gave stakeholders a quicker and more organized view of important operational and financial activity.",
+      tags: ["Excel", "VBA", "Dashboard Design", "Data Visualization"],
+    },
+    {
+      eyebrow: "Data Analysis",
+      title: "Returns & Refunds Analysis",
+      subtitle: "Finding patterns in a large operational dataset",
+      problem:
+        "Returns and refunds occurred frequently, but the team needed a more structured way to understand recurring trends and root causes.",
+      work:
+        "I worked through a large operational dataset, cleaned inconsistent fields, organized the data, and identified recurring patterns across errors and workflows.",
+      outcome:
+        "The analysis helped surface common return drivers and supported conversations around process improvement.",
+      tags: ["Data Cleaning", "Excel", "Root Cause Analysis", "Reporting"],
+    },
+    {
+      eyebrow: "Automation",
+      title: "Business Process Automation",
+      subtitle: "Reducing repetitive manual reporting",
+      problem:
+        "Several recurring reporting processes required significant manual effort and were difficult to maintain consistently.",
+      work:
+        "I developed VBA-driven automation and reporting logic to streamline repetitive tasks and make recurring workflows more efficient.",
+      outcome:
+        "The automation reduced manual effort and improved the speed and consistency of recurring reporting.",
+      tags: ["VBA", "Excel", "Automation", "Process Improvement"],
+    },
+  ];
+
+  const additionalProductWork = [
+    {
+      title: "Competitive Intelligence & Product Positioning",
+      text:
+        "Researched climate-risk and property-impact solutions to understand competitor capabilities, product differentiation, market positioning, and opportunities for clearer go-to-market messaging.",
+    },
+    {
+      title: "Discovery Center 2.0",
+      text:
+        "Contributed to broader Discovery Center initiatives involving visualization concepts, client engagement experiences, product demonstrations, data storytelling, and launch-readiness discussions.",
+    },
+    {
+      title: "Cross-Functional Product Discovery",
+      text:
+        "Built relationships across Product, Capital Markets, Analytics, Data Solutions, Economics, and client-facing teams to better understand customer needs and how different parts of the business work together.",
+    },
+  ];
 
   const involvement = [
     {
       title: "Multicultural Association of Business Students",
       role: "President",
-      dates: "August 2023 – May 2025",
       logo: mabsLogo,
       details:
-        "Led professional workshops, mentorship programs, and events that helped build community and support students in Mays Business School.",
+        "Led professional development, mentorship, and community-building initiatives within Mays Business School.",
     },
     {
       title: "Aggie Women in Business",
-      role: "Member Development Committee Member",
-      dates: "August 2023 – Present",
+      role: "Member Development Committee",
       logo: awibLogo,
       details:
-        "Helped organize volunteer and professional development events focused on mentorship, growth, and community.",
+        "Helped organize volunteer events, mentorship initiatives, and professional development programming.",
     },
     {
       title: "Sikh Student Association",
       role: "President",
-      dates: "August 2023 – May 2025",
       logo: ssaLogo,
       details:
-        "Planned cultural events and worked with outside organizations to promote awareness, connection, and community engagement.",
+        "Planned cultural programming, promoted Sikh awareness, and worked with outside organizations to create meaningful events for students.",
     },
     {
       title: "Seva Daan",
       role: "Committee Member",
-      dates: "June 2021 – August 2022",
       logo: sevaLogo,
       details:
-        "Helped support nonprofit initiatives focused on meal donation and community outreach for the homeless population in DFW.",
+        "Supported nonprofit efforts focused on meal donation, fundraising, and community outreach for homeless shelters across DFW.",
     },
   ];
 
   const skillGroups = [
     {
-      title: "Data & Analysis",
+      title: "Product & Discovery",
+      items: [
+        "Product Discovery",
+        "Stakeholder Interviews",
+        "User Research",
+        "Requirements Gathering",
+        "Wireframing",
+        "Prototyping",
+        "Market Analysis",
+        "Product Strategy",
+        "Competitive Intelligence",
+      ],
+    },
+    {
+      title: "Data & Analytics",
       items: [
         "SQL",
         "Excel",
         "VBA",
+        "Power BI",
+        "Tableau",
         "Data Analysis",
-        "Data Visualization",
         "Data Cleaning",
+        "Data Transformation",
+        "Data Visualization",
       ],
     },
     {
-      title: "Business & Strategy",
+      title: "Business & Communication",
       items: [
         "Business Analysis",
         "Process Improvement",
+        "Root Cause Analysis",
         "Stakeholder Communication",
+        "Cross-Functional Collaboration",
+        "Executive Presentations",
+        "Data Storytelling",
         "Problem Solving",
-        "Tableau",
-        "Power BI",
       ],
     },
     {
-      title: "Other Tools",
-      items: ["PowerPoint", "Word", "Access", "Python", "HTML", "AWS"],
+      title: "Tools & Technology",
+      items: [
+        "Python",
+        "HTML",
+        "AWS",
+        "PowerPoint",
+        "Microsoft Access",
+        "Word",
+        "C#",
+      ],
     },
   ];
 
@@ -175,19 +314,19 @@ export default function App() {
     {
       title: "Cooking",
       text:
-        "I love trying new recipes and putting my own spin on dishes. It is one of my favorite ways to slow down and relax. Above is a recent creation of mine — Ras Malai Cupcakes! They are inspired by the traditional Indian dessert, Ras Malai, and are one of my favorite treats to make and eat.",
+        "I love trying new recipes and putting my own spin on dishes. Cooking is one of my favorite ways to slow down and be creative. These Ras Malai cupcakes are one of my favorite recent creations.",
       image: cookingImg,
     },
     {
       title: "Reading",
       text:
-        "I am a big reader, and I love books that feel thoughtful, inspiring, or just easy to get lost in. My favorite genres are fantasy, historical fiction, and personal growth, but I am always open to new recommendations. Fun fact — I read 52 books in 2025, so you will almost always catch me with a book in hand.",
+        "I am a big reader, especially when it comes to fantasy, historical fiction, and personal growth. I read 52 books in 2025, so there is a very good chance you will find me with a book nearby.",
       image: readingImg,
     },
     {
       title: "Photography",
       text:
-        "I enjoy capturing moments through photos or videos, especially when I am traveling or experiencing somewhere new. It is a fun way for me to be creative and also have a visual way to remember experiences. The photo above is one I took in Isla Mujeres, Mexico — it was such a beautiful place, and I loved being able to capture the colors and energy of the island.",
+        "I love capturing places and moments through photos and videos, especially while traveling. This photo is from Isla Mujeres, Mexico, and I loved being able to capture the colors and energy of the island.",
       image: photographyImg,
     },
   ];
@@ -196,483 +335,581 @@ export default function App() {
     {
       title: "New York",
       text:
-        "New York has always been on my bucket list, so finally getting to visit felt really special. We did all the touristy things, explored the city, and honestly ate way too much food. It was one of those trips that felt fun the entire time and is definitely something I will always remember.",
+        "New York had always been on my bucket list, so finally getting to visit felt really special. We did all the touristy things, explored the city, and honestly ate way too much food. It was one of those trips that was fun from beginning to end and is definitely something I will always remember.",
       file: nyVideo,
     },
     {
       title: "Punjab, India",
       text:
-        "As the daughter of immigrant parents, staying connected to my roots has always been important to me. Growing up, we visited Punjab almost every summer, and over time it became a place that feels like home, just like it does for my parents. It is a part of me that I will always carry with me. The video above is from one of my trips there — a montage of clips from different visits that captures some of my favorite moments and memories.",
+        "As the daughter of immigrant parents, staying connected to my roots has always been important to me. We visited Punjab almost every summer growing up, and over time it became a place that feels like home to me too. This video brings together some of my favorite memories from a place that will always mean a lot to me.",
       file: punjabVideo,
     },
   ];
 
   return (
-    <div className="page">
-      <div className="background-blur blur-one"></div>
-      <div className="background-blur blur-two"></div>
-      <div className="background-blur blur-three"></div>
+    <div className="site-shell">
+      <div className="ambient-orb orb-one"></div>
+      <div className="ambient-orb orb-two"></div>
+      <div className="ambient-orb orb-three"></div>
 
-      <div className="container">
+      <div className="site-container">
         <nav className="navbar">
-          <div className="brand">
-            <p className="brand-label">Portfolio</p>
-            <h2>Harleen Kaur</h2>
-          </div>
+          <a href="#top" className="brand">
+            <span className="brand-mark">HK</span>
+            <span>
+              <small>Portfolio</small>
+              Harleen Kaur
+            </span>
+          </a>
 
           <div className="nav-links">
             <a href="#about">About</a>
             <a href="#experience">Experience</a>
-            <a href="#projects">Projects</a>
-            <a href="#involvement">Activities</a>
+            <a href="#work">Work</a>
+            <a href="#leadership">Leadership</a>
             <a href="#skills">Skills</a>
+            <a href="#recommendations">Recommendations</a>
             <a href="#outside">Outside of Work</a>
-            <a href="#contact">Contact</a>
           </div>
+
+          <a href="#contact" className="nav-cta">
+            Let’s Connect
+          </a>
         </nav>
 
-        <section className="hero">
-          <div className="hero-text">
-            <p className="pill">
-              Product Analyst @ Cotality | Texas A&amp;M MIS Graduate
-            </p>
+        <main id="top">
+          <section className="hero reveal">
+            <div className="hero-copy">
+              <div className="eyebrow-pill">
+                Texas A&M MIS Graduate · Product · Business Analysis
+              </div>
 
-            <h1>
-              Hi, I’m Harleen.
-              <span> I like building useful things </span>
-              with data, technology, and creativity.
-            </h1>
+              <h1>
+                Hi, I’m Harleen.
+                <span>
+                  I like building useful things with data, technology, and
+                  creativity.
+                </span>
+              </h1>
 
-            <p className="hero-description">
-              I recently graduated from Texas A&amp;M University with a degree in
-              Management Information Systems. Through my experience in business
-              analysis, data analytics, and product-focused work, I have
-              developed a passion for using technology and data to solve
-              problems, improve processes, and create meaningful experiences.
-            </p>
+              <p className="hero-description">
+                I’m a recent Texas A&M graduate with a degree in Management
+                Information Systems and experience across business analysis,
+                process improvement, data, and product discovery. I’m especially
+                interested in work at the intersection of business and
+                technology—where I can understand a problem, bring structure to
+                it, and help build something useful.
+              </p>
 
-            <div className="hero-buttons">
-              <a href="#projects" className="btn btn-dark">
-                View My Work
-              </a>
-              <a
-                href="/HarleenKaur_Resume.pdf"
-                className="btn btn-light"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View Resume
-              </a>
+              <div className="hero-actions">
+                <a href="#work" className="button button-primary">
+                  Explore My Work
+                  <span>↗</span>
+                </a>
+
+                <a
+                  href="/HarleenKaur_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="button button-secondary"
+                >
+                  View Resume
+                </a>
+              </div>
+
+              <div className="hero-highlights">
+                <div>
+                  <strong>Product</strong>
+                  <span>Discovery & Strategy</span>
+                </div>
+                <div>
+                  <strong>Data</strong>
+                  <span>Analysis & Storytelling</span>
+                </div>
+                <div>
+                  <strong>People</strong>
+                  <span>Leadership & Collaboration</span>
+                </div>
+              </div>
             </div>
-          </div>
 
-          <div className="hero-card">
-            <div className="profile-card">
-              <div
-                style={{
-                  width: "180px",
-                  height: "180px",
-                  borderRadius: "50%",
-                  overflow: "hidden",
-                  margin: "0 auto",
-                  border: "3px solid white",
-                  boxShadow: "0 10px 25px rgba(0, 0, 0, 0.1)",
-                }}
-              >
+            <div className="hero-visual">
+              <div className="portrait-frame">
+                <div className="portrait-glow"></div>
+
                 <img
                   src={headshot}
                   alt="Harleen Kaur"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    display: "block",
-                  }}
+                  className="hero-headshot"
                 />
+
+                <div className="floating-note floating-note-top">
+                  <span className="note-dot"></span>
+                  Based in Dallas, TX
+                </div>
+
+                <div className="floating-note floating-note-bottom">
+                  <span>✦</span>
+                  Curious by nature
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section id="about" className="section">
-          <div className="section-box two-column">
-            <div>
-              <p className="section-label">About Me</p>
-              <h2>
-                Building solutions at the intersection of business, technology,
-                and people.
+          <section id="about" className="section reveal">
+            <div className="section-kicker">About Me</div>
+
+            <div className="about-grid">
+              <div>
+                <h2 className="section-heading">
+                  I’m most interested in the space where business, technology,
+                  and people come together.
+                </h2>
+              </div>
+
+              <div className="about-copy">
+                <p>
+                  I have had the opportunity to work across IT support, process
+                  improvement, business analysis, and product. Those experiences
+                  helped me realize that I enjoy work that combines analytical
+                  thinking with communication, creativity, and collaboration.
+                </p>
+
+                <p>
+                  At Cotality, that has meant everything from SQL and VBA-driven
+                  reporting automation to stakeholder interviews, product
+                  discovery, wireframing, competitive research, and executive
+                  storytelling.
+                </p>
+
+                <p>
+                  Outside of work, leadership and community are also a big part
+                  of who I am. I have loved being involved in organizations that
+                  gave me the chance to mentor others, build community, and
+                  create experiences that bring people together.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section id="experience" className="section reveal">
+            <div className="section-kicker">Experience</div>
+
+            <div className="section-heading-row">
+              <h2 className="section-heading">
+                A career story that keeps expanding.
               </h2>
-            </div>
-
-            <div className="about-text">
-              <p>
-                I have always been drawn to the space where business and
-                technology come together. I enjoy understanding how things work,
-                identifying opportunities for improvement, and finding practical
-                solutions to complex problems.
-              </p>
 
               <p>
-                My experience has included business analysis, reporting, data
-                analytics, and process improvement initiatives. What I enjoy
-                most, though, is understanding the bigger picture and creating
-                solutions that help people work more effectively and make better
-                decisions.
-              </p>
-
-              <p>
-                Outside of work, I value leadership, community involvement, and
-                creativity. Whether I am leading student organizations,
-                traveling, reading, or working on personal projects, I am always
-                looking for opportunities to learn and grow.
+                Each experience has helped me understand a different side of how
+                technology supports people, processes, and products.
               </p>
             </div>
-          </div>
-        </section>
 
-<section id="experience" className="section">
-  <p className="section-label">Experience</p>
-  <h2 className="section-title">
-    Places where I have learned, contributed, and grown.
-  </h2>
+            <div className="experience-stack">
+              {experience.map((company) => (
+                <article className="experience-card" key={company.company}>
+                  <div className="company-column">
+                    <div className="company-logo-wrap">
+                      <img src={company.logo} alt={`${company.company} logo`} />
+                    </div>
 
-  <div
-    style={{
-      display: "grid",
-      gap: "24px",
-      marginTop: "28px",
-    }}
-  >
-    {experience.map((company) => (
-      <div className="section-box" key={company.company}>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "flex-start",
-            gap: "22px",
-            flexWrap: "wrap",
-          }}
-        >
-          <div
-            style={{
-              width: "200px",
-              height: "135px",
-              borderRadius: "18px",
-              background: "#f8faf7",
-              border: "1px solid #dde2da",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              overflow: "hidden",
-              flexShrink: 0,
-            }}
-          >
-            <img
-              src={company.logo}
-              alt={company.company}
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "contain",
-              }}
-            />
-          </div>
+                    <div>
+                      <h3>{company.company}</h3>
+                      <p>{company.location}</p>
+                    </div>
+                  </div>
 
-          <div style={{ flex: 1, minWidth: "280px" }}>
-            <h3 style={{ margin: "0 0 6px 0" }}>{company.company}</h3>
-            <p style={{ margin: "0 0 20px 0", color: "#666" }}>
-              {company.location}
-            </p>
+                  <div className="roles-column">
+                    {company.roles.map((role, index) => (
+                      <div className="role" key={`${company.company}-${role.title}`}>
+                        <div className="role-timeline">
+                          <span className="timeline-dot"></span>
+                          {index !== company.roles.length - 1 && (
+                            <span className="timeline-line"></span>
+                          )}
+                        </div>
 
-            <div style={{ display: "grid", gap: "22px" }}>
-              {company.roles.map((role) => (
-                <div
-                  key={role.title}
-                  style={{
-                    borderLeft: "2px solid #dde2da",
-                    paddingLeft: "18px",
-                  }}
-                >
-                  <h4 style={{ margin: "0 0 4px 0", fontSize: "18px" }}>
-                    {role.title}
-                  </h4>
+                        <div className="role-content">
+                          <div className="role-heading">
+                            <div>
+                              <h4>{role.title}</h4>
+                              <p>
+                                {role.type} · {role.dates}
+                              </p>
+                            </div>
+                          </div>
 
-                  <p
-                    style={{
-                      margin: "0 0 10px 0",
-                      color: "#666",
-                      fontSize: "14px",
-                    }}
-                  >
-                    {role.type} • {role.dates}
-                  </p>
+                          <p className="role-description">{role.description}</p>
 
-                  <p
-                    style={{
-                      margin: "0 0 12px 0",
-                      lineHeight: 1.8,
-                      color: "#4f4f4f",
-                    }}
-                  >
-                    {role.description}
-                  </p>
+                          <div className="role-highlights">
+                            {role.highlights.map((highlight) => (
+                              <div className="role-highlight" key={highlight}>
+                                <span>→</span>
+                                <p>{highlight}</p>
+                              </div>
+                            ))}
+                          </div>
 
-                  <p
-                    style={{
-                      margin: 0,
-                      lineHeight: 1.7,
-                      color: "#555",
-                      fontSize: "14px",
-                    }}
-                  >
-                    <strong>Skills:</strong> {role.skills}
-                  </p>
-                </div>
+                          <div className="tag-row">
+                            {role.tags.map((tag) => (
+                              <span className="tag" key={tag}>
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </article>
               ))}
             </div>
-          </div>
-        </div>
-      </div>
-    ))}
-  </div>
-</section>
+          </section>
 
-        <section id="projects" className="section">
-          <p className="section-label">Projects</p>
-          <h2 className="section-title">
-            A few examples of how I think through problems and solutions.
-          </h2>
+          <section id="work" className="section reveal">
+            <div className="section-kicker">Featured Work</div>
 
-          <div className="project-grid">
-            {projects.map((project) => (
-              <div className="project-card" key={project.title}>
-                <p className="project-subtitle">{project.subtitle}</p>
-                <h3>{project.title}</h3>
+            <div className="section-heading-row">
+              <h2 className="section-heading">
+                A few projects that shaped how I think.
+              </h2>
 
-                <div className="project-section">
-                  <strong>Problem</strong>
-                  <p>{project.problem}</p>
+              <p className="confidentiality-note">
+                Project details are intentionally kept high-level to respect
+                company confidentiality.
+              </p>
+            </div>
+
+            <div className="featured-project">
+              <div className="featured-project-number">01</div>
+
+              <div className="featured-project-content">
+                <p className="project-eyebrow">{projects[0].eyebrow}</p>
+
+                <h3>{projects[0].title}</h3>
+                <p className="project-subtitle">{projects[0].subtitle}</p>
+
+                <div className="project-story-grid">
+                  <div>
+                    <span className="story-label">The opportunity</span>
+                    <p>{projects[0].problem}</p>
+                  </div>
+
+                  <div>
+                    <span className="story-label">What I worked on</span>
+                    <p>{projects[0].work}</p>
+                  </div>
+
+                  <div>
+                    <span className="story-label">The experience</span>
+                    <p>{projects[0].outcome}</p>
+                  </div>
+
+                  <div>
+                    <span className="story-label">What I learned</span>
+                    <p>{projects[0].learned}</p>
+                  </div>
                 </div>
 
-                <div className="project-section">
-                  <strong>What I worked on</strong>
-                  <p>{project.solution}</p>
-                </div>
-
-                <div className="project-section">
-                  <strong>Tools</strong>
-                  <p>{project.tools}</p>
-                </div>
-
-                <div className="impact-box">
-                  <strong>Why it mattered:</strong> {project.impact}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section id="involvement" className="section">
-          <p className="section-label">Leadership & Activities</p>
-          <h2 className="section-title">
-            Things I care about outside of class and work.
-          </h2>
-
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-              gap: "24px",
-              marginTop: "28px",
-            }}
-          >
-            {involvement.map((item) => (
-              <div className="project-card" key={item.title + item.role}>
-                <div
-                  style={{
-                    width: "56px",
-                    height: "56px",
-                    borderRadius: "16px",
-                    background: "#f8faf7",
-                    border: "1px solid #dde2da",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    overflow: "hidden",
-                    marginBottom: "14px",
-                  }}
-                >
-                  <img
-                    src={item.logo}
-                    alt={item.title}
-                    style={{
-                      width: "70%",
-                      height: "70%",
-                      objectFit: "contain",
-                    }}
-                  />
-                </div>
-
-                <p className="project-subtitle">{item.dates}</p>
-                <h3>{item.title}</h3>
-                <div className="project-section">
-                  <strong>{item.role}</strong>
-                  <p>{item.details}</p>
+                <div className="tag-row">
+                  {projects[0].tags.map((tag) => (
+                    <span className="tag tag-light" key={tag}>
+                      {tag}
+                    </span>
+                  ))}
                 </div>
               </div>
-            ))}
-          </div>
-        </section>
 
-        <section id="skills" className="section">
-          <div className="section-box">
-            <p className="section-label">Skills</p>
-            <h2 className="section-title small">
-              A few tools and strengths I use most often.
-            </h2>
+              <div className="featured-project-art">
+                <div className="art-card art-card-one">
+                  <span>01</span>
+                  <strong>Discover</strong>
+                </div>
 
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-                gap: "20px",
-                marginTop: "28px",
-              }}
-            >
-              {skillGroups.map((group) => (
-                <div
-                  key={group.title}
-                  style={{
-                    background: "#f8faf7",
-                    border: "1px solid #dde2da",
-                    borderRadius: "24px",
-                    padding: "22px",
-                  }}
-                >
-                  <h3 style={{ marginTop: 0 }}>{group.title}</h3>
-                  <div className="skills-list">
-                    {group.items.map((skill) => (
-                      <span className="skill-pill" key={skill}>
-                        {skill}
+                <div className="art-card art-card-two">
+                  <span>02</span>
+                  <strong>Design</strong>
+                </div>
+
+                <div className="art-card art-card-three">
+                  <span>03</span>
+                  <strong>Tell the Story</strong>
+                </div>
+              </div>
+            </div>
+
+            <div className="project-grid">
+              {projects.slice(1).map((project, index) => (
+                <article className="project-card" key={project.title}>
+                  <div className="project-card-top">
+                    <span>0{index + 2}</span>
+                    <p>{project.eyebrow}</p>
+                  </div>
+
+                  <h3>{project.title}</h3>
+                  <p className="project-subtitle">{project.subtitle}</p>
+
+                  <div className="project-section">
+                    <strong>Problem</strong>
+                    <p>{project.problem}</p>
+                  </div>
+
+                  <div className="project-section">
+                    <strong>What I worked on</strong>
+                    <p>{project.work}</p>
+                  </div>
+
+                  <div className="project-outcome">
+                    <strong>Why it mattered</strong>
+                    <p>{project.outcome}</p>
+                  </div>
+
+                  <div className="tag-row">
+                    {project.tags.map((tag) => (
+                      <span className="tag" key={tag}>
+                        {tag}
                       </span>
                     ))}
                   </div>
-                </div>
+                </article>
               ))}
             </div>
-          </div>
-        </section>
 
-        <section id="outside" className="section">
-          <p className="section-label">Outside of Work</p>
-          <h2 className="section-title">A Little More About Me</h2>
-
-          <div
-            style={{
-              marginTop: "28px",
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-              gap: "24px",
-            }}
-          >
-            {interests.map((interest) => (
-              <div className="project-card" key={interest.title}>
-                <div
-                  style={{
-                    width: "100%",
-                    height: "400px",
-                    borderRadius: "22px",
-                    overflow: "hidden",
-                    background: "#f2f2f2",
-                    marginBottom: "16px",
-                  }}
-                >
-                  <img
-                    src={interest.image}
-                    alt={interest.title}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                      display: "block",
-                    }}
-                  />
-                </div>
-
-                <h3>{interest.title}</h3>
-                <p className="project-description">{interest.text}</p>
+            <div className="additional-work">
+              <div className="additional-work-heading">
+                <span>More Product Exposure</span>
+                <h3>Beyond my core project</h3>
               </div>
-            ))}
-          </div>
 
-          <div
-            style={{
-              marginTop: "28px",
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-              gap: "24px",
-            }}
-          >
-            {videos.map((video) => (
-              <div className="project-card" key={video.title}>
-                <h3 style={{ marginBottom: "16px" }}>{video.title}</h3>
-                <video
-                  controls
-                  style={{
-                    width: "100%",
-                    borderRadius: "20px",
-                    display: "block",
-                    marginBottom: "16px",
-                  }}
-                >
-                  <source src={video.file} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-
-                <p className="project-description">{video.text}</p>
+              <div className="additional-work-grid">
+                {additionalProductWork.map((item) => (
+                  <article className="small-work-card" key={item.title}>
+                    <span className="small-work-icon">↗</span>
+                    <h4>{item.title}</h4>
+                    <p>{item.text}</p>
+                  </article>
+                ))}
               </div>
-            ))}
-          </div>
-        </section>
-
-        <section id="contact" className="section">
-          <div className="contact-box">
-            <p className="section-label contact-label">Contact</p>
-            <h2>I’m always open to learning and connecting.</h2>
-            <p className="contact-text">
-              Thank you for taking the time to learn a little about me and
-              explore my work. I would love to connect, hear your story, and
-              continue learning from others along the way.
-            </p>
-
-            <div className="contact-links">
-              <a
-                href="mailto:harleen.khakh555@gmail.com"
-                className="btn btn-white"
-              >
-                Email
-              </a>
-
-              <a
-                href="https://www.linkedin.com/in/harleenkaurk05/"
-                className="btn btn-outline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                LinkedIn
-              </a>
-
-              <a
-                href="/HarleenKaur_Resume.pdf"
-                className="btn btn-outline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Resume
-              </a>
             </div>
-          </div>
-        </section>
+          </section>
+
+          <section id="leadership" className="section reveal">
+            <div className="section-kicker">Leadership & Community</div>
+
+            <div className="section-heading-row">
+              <h2 className="section-heading">
+                Some of my most meaningful experiences happened outside the
+                classroom.
+              </h2>
+
+              <p>
+                Leadership taught me how to communicate, listen, mentor, and
+                build community around a shared purpose.
+              </p>
+            </div>
+
+            <div className="leadership-grid">
+              {involvement.map((item) => (
+                <article className="leadership-card" key={item.title}>
+                  <div className="leadership-logo">
+                    <img src={item.logo} alt={`${item.title} logo`} />
+                  </div>
+
+                  <div>
+                    <p className="leadership-role">{item.role}</p>
+                    <h3>{item.title}</h3>
+                    <p>{item.details}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section id="skills" className="section reveal">
+            <div className="skills-panel">
+              <div className="skills-intro">
+                <div className="section-kicker">Skills</div>
+                <h2 className="section-heading">
+                  A mix of technical, analytical, product, and people skills.
+                </h2>
+                <p>
+                  I like being able to understand the data, understand the
+                  business problem, and communicate the story behind both.
+                </p>
+              </div>
+
+              <div className="skills-grid">
+                {skillGroups.map((group) => (
+                  <article className="skill-group" key={group.title}>
+                    <h3>{group.title}</h3>
+
+                    <div className="skill-pills">
+                      {group.items.map((item) => (
+                        <span key={item}>{item}</span>
+                      ))}
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section id="recommendations" className="section reveal">
+            <div className="section-kicker">Recommendations</div>
+
+            <div className="section-heading-row">
+              <h2 className="section-heading">
+                What it’s like to work with me.
+              </h2>
+
+              <p>
+                I’m grateful for the managers and teammates who have taken the
+                time to share feedback on my work and growth.
+              </p>
+            </div>
+
+            <article className="recommendation-card">
+              <div className="quote-mark">“</div>
+
+              <div className="recommendation-main">
+                <blockquote>
+                  Harleen consistently demonstrates a strong commitment to
+                  quality, professionalism, and continuous improvement. Her
+                  attention to detail, thoroughness, and ability to work
+                  independently make her a highly dependable team member.
+                </blockquote>
+
+                <div className="recommendation-person">
+                  <div className="recommendation-avatar">VB</div>
+
+                  <div>
+                    <strong>Vanessa Brody</strong>
+                    <span>
+                      Professional Transformation Specialist · Cotality
+                    </span>
+                    <small>Former Manager</small>
+                  </div>
+                </div>
+              </div>
+
+              <div className="recommendation-impact">
+                <p>Impact Highlight</p>
+
+                <strong>
+                  “What was previously a manual process requiring approximately
+                  three days was reduced to less than 30 minutes.”
+                </strong>
+
+                <span>
+                  Manager feedback on a month-end reporting automation project.
+                </span>
+              </div>
+            </article>
+          </section>
+
+          <section id="outside" className="section reveal">
+            <div className="section-kicker">Outside of Work</div>
+
+            <div className="section-heading-row">
+              <h2 className="section-heading">A little more about me.</h2>
+
+              <p>
+                The things I do outside of work keep me creative, curious, and
+                connected to the people and places I care about.
+              </p>
+            </div>
+
+            <div className="interest-grid">
+              {interests.map((interest) => (
+                <article className="interest-card" key={interest.title}>
+                  <div className="interest-image-wrap">
+                    <img src={interest.image} alt={interest.title} />
+                  </div>
+
+                  <div className="interest-content">
+                    <h3>{interest.title}</h3>
+                    <p>{interest.text}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <div className="travel-heading">
+              <span>Travel Diaries</span>
+              <h3>Some memories I wanted to keep.</h3>
+            </div>
+
+            <div className="video-grid">
+              {videos.map((video) => (
+                <article className="video-card" key={video.title}>
+                  <div className="video-wrap">
+                    <video controls preload="metadata">
+                      <source src={video.file} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+
+                  <div className="video-copy">
+                    <h3>{video.title}</h3>
+                    <p>{video.text}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section id="contact" className="section reveal">
+            <div className="contact-card">
+              <div>
+                <p className="contact-kicker">Contact</p>
+
+                <h2>
+                  I’m always open to learning, connecting, and hearing new
+                  perspectives.
+                </h2>
+
+                <p>
+                  Thank you for taking the time to learn a little about me and
+                  explore my work. If you would like to connect, ask a question,
+                  or just say hi, I would love to hear from you.
+                </p>
+              </div>
+
+              <div className="contact-actions">
+                <a
+                  href="mailto:harleen.khakh555@gmail.com"
+                  className="contact-button contact-button-light"
+                >
+                  Email Me
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/in/harleenkaurk05/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-button"
+                >
+                  LinkedIn
+                </a>
+
+                <a
+                  href="/HarleenKaur_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-button"
+                >
+                  Resume
+                </a>
+              </div>
+            </div>
+          </section>
+
+          <footer className="footer">
+            <p>Designed & built by Harleen Kaur.</p>
+            <a href="#top">Back to top ↑</a>
+          </footer>
+        </main>
       </div>
     </div>
   );
