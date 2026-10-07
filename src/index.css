@@ -5364,7 +5364,17 @@ video {
 
 
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+
   overflow: hidden;
+
+
+
+  background: #f7f4fa;
 
 }
 
@@ -5382,7 +5392,8 @@ video {
 
 
 
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
 
 
 
@@ -5394,7 +5405,7 @@ video {
 
 .interest-card:hover .interest-image img {
 
-  transform: scale(1.045);
+  transform: scale(1);
 
 }
 
